@@ -15,6 +15,16 @@ public class Bills {
 
     private String remark;
 
+    public Integer getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(Integer typeName) {
+        this.typeName = typeName;
+    }
+
+    private Integer typeName;
+
     public Integer getId() {
         return id;
     }
