@@ -1,5 +1,6 @@
 package com.lz.vo;
 
+import com.github.pagehelper.PageInfo;
 import com.lz.entity.Bills;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +14,8 @@ public class ResultVO {
     private Integer code;
     private String msg;
     private Integer count;
-    private List<Bills> data;
+    private PageInfo<Bills> data;
+
 
 
 }

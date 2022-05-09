@@ -14,6 +14,15 @@ public class Bills {
     private Double price;
 
     private String remark;
+    private Integer conut;
+
+    public Integer getConut() {
+        return conut;
+    }
+
+    public void setConut(Integer conut) {
+        this.conut = conut;
+    }
 
     public Integer getTypeName() {
         return typeName;

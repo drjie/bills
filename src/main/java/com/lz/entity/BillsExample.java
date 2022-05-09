@@ -9,6 +9,7 @@ public class BillsExample {
 
     protected boolean distinct;
 
+
     protected List<Criteria> oredCriteria;
 
     public BillsExample() {
