@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("login")
 public class LoginController {
 
     /**
@@ -13,6 +13,8 @@ public class LoginController {
      */
     @RequestMapping("toLogin")
     public String toLogin() {
+
+        System.out.println("dfzsdsx");
         return "login";
     }
 }

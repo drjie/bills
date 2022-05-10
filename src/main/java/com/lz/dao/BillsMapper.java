@@ -3,9 +3,10 @@ package com.lz.dao;
 import com.lz.entity.Bills;
 import com.lz.entity.BillsExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface BillsMapper {
     long countByExample(BillsExample example);
 
