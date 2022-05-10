@@ -1,0 +1,50 @@
+# 配置数据源
+spring:
+  #thymeleaf的配置
+  thymeleaf:
+    cache: false
+    enabled: true
+  #      web-stat-filter:
+  #        enabled: true
+  #        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+  devtools:
+    restart:
+      # 开启自动重启
+      enabled: true
+      # 轮询间隔：devtools会在指定的轮询间隔内扫描当前项目是否做了修改
+      # 默认是1s
+      poll-interval: 2s
+      # 静默时间，在重启之前，会进行检查，如果指定
+      # 静默时间内没有做任何修改，就会重启
+      quiet-period: 1s
+
+  main:
+    # 允许循环依赖
+    allow-circular-references: true
+  datasource:
+    # 使用默认的Hikari数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bills?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimeZone=GTM+8
+    username: root
+    password: 011220
+
+# MyBatis配置
+mybatis:
+  # mybatis配置文件的路径
+  # config-location:
+  mapper-locations: com/lz/mapper/*.xml
+  type-aliases-package: com.lz.entity
+  configuration:
+    # 二级缓存
+    cache-enabled: true
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 主键回填
+    use-generated-keys: true
+    # 懒加载
+    lazy-loading-enabled: true
+    # 积极加载
+    aggressive-lazy-loading: false
+    # 驼峰命名
+    map-underscore-to-camel-case: true
