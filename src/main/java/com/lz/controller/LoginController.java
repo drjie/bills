@@ -28,6 +28,8 @@ public class LoginController {
      */
     @RequestMapping("toLogin")
     public String toLogin() {
+
+        System.out.println("dfzsdsx");
         return "login";
     }
 
