@@ -27,7 +27,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bills?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimeZone=GTM+8
     username: root
-    password: 200202
+    password: 011220
 
 # MyBatis配置
 mybatis:
