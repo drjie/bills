@@ -6,7 +6,7 @@ import com.lz.dao.BilltypeMapper;
 import com.lz.entity.Billtype;
 import com.lz.service.BilltypeService;
 import com.lz.vo.DataVO;
-import com.lz.vo.ResultVo;
+import com.lz.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ public class BilltypeServiceImpl implements BilltypeService {
     private BilltypeMapper billtypeMapper;
 
     @Override
-    public ResultVo select(Integer pageNum, Integer pageSize, Integer id) {
-        ResultVo resultVo = new ResultVo();
+    public ResultVO select(Integer pageNum, Integer pageSize, Integer id) {
+        ResultVO resultVo = new ResultVO();
 
         //data对应的结果
         List<Billtype> billtypes;
@@ -36,14 +36,14 @@ public class BilltypeServiceImpl implements BilltypeService {
             if(billtype == null){
                 dataVO = new DataVO<>(0L,billtypes,pageNum,pageSize);
 
-                resultVo = new ResultVo(4000,"没有这条记账类型！！！",false,dataVO);
+                resultVo = new ResultVO(4000,"没有这条记账类型！！！",false,dataVO);
             }else {
                 //查到了放到集合里
                 billtypes.add(billtype);
 
                 dataVO = new DataVO<>(1L, billtypes, pageNum, pageSize);
 
-                resultVo = new ResultVo(1000, "查询此类型成功！", true, dataVO);
+                resultVo = new ResultVO(1000, "查询此类型成功！", true, dataVO);
             }
         }else {
             //开启分页
@@ -54,14 +54,14 @@ public class BilltypeServiceImpl implements BilltypeService {
             if(billtypes.size()==0){
                 dataVO = new DataVO<>(0L,billtypes,pageNum,pageSize);
 
-                resultVo = new ResultVo(4100,"没有记账类型！",false,dataVO);
+                resultVo = new ResultVO(4100,"没有记账类型！",false,dataVO);
             }else{
                 //封装pageInfo，为了获取总数据量
                 PageInfo<Billtype> pageInfo = new PageInfo<>(billtypes);
 
                 dataVO = new DataVO<>(pageInfo.getTotal(),billtypes,pageNum,pageSize);
 
-                resultVo = new ResultVo(1100,"记账类型查询成功！",true,dataVO);
+                resultVo = new ResultVO(1100,"记账类型查询成功！",true,dataVO);
             }
         }
 
