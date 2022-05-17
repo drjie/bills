@@ -1,12 +1,16 @@
 package com.lz.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Bills {
     private Integer id;
 
     private String title;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date billtime;
 
     private Integer typeid;
@@ -14,7 +18,10 @@ public class Bills {
     private Double price;
 
     private String remark;
+
     private Integer conut;
+
+    private String typeName;
 
     public Integer getConut() {
         return conut;
@@ -24,15 +31,13 @@ public class Bills {
         this.conut = conut;
     }
 
-    public Integer getTypeName() {
+    public String getTypeName() {
         return typeName;
     }
 
-    public void setTypeName(Integer typeName) {
+    public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-
-    private Integer typeName;
 
     public Integer getId() {
         return id;

@@ -15,10 +15,8 @@ public class BilltypeController {
     @Autowired
     private BilltypeService billtypeService;
 
-    @GetMapping("select")
-    private ResultVO select(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
-                            @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize,
-                            Integer id){
-        return billtypeService.select(pageNum,pageSize,id);
+    @GetMapping("loadAllBillType")
+    private ResultVO select(){
+        return billtypeService.select();
     }
 }

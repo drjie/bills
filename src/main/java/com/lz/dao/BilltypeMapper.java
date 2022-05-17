@@ -1,11 +1,13 @@
 package com.lz.dao;
 
+import com.lz.entity.Bills;
 import com.lz.entity.Billtype;
 import com.lz.entity.BilltypeExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface BilltypeMapper {
     long countByExample(BilltypeExample example);
 
@@ -28,4 +30,6 @@ public interface BilltypeMapper {
     int updateByPrimaryKeySelective(Billtype record);
 
     int updateByPrimaryKey(Billtype record);
+
+
 }

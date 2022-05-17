@@ -5,6 +5,7 @@ import com.lz.entity.BillsExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 @Repository
 public interface BillsMapper {
@@ -29,4 +30,8 @@ public interface BillsMapper {
     int updateByPrimaryKeySelective(Bills record);
 
     int updateByPrimaryKey(Bills record);
+
+    List<Bills> findByType();
+
+    List<Bills> selectBytypeidandtime(@Param("typeid") Integer typeid,@Param("startDate") Date startDate,@Param("endDate") Date endDate);
 }

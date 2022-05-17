@@ -9,7 +9,7 @@ import java.util.Date;
 
 
 public interface billsService  {
-    ResultVO get(Integer page,Integer limit, Integer  typeid, Date startDate, Date endDate);
+    ResultVO get(Integer page,Integer limit, Integer  typeid, String startDate1, String endDate1);
     ResultVO add(Bills bills);
 
 }

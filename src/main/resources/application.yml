@@ -1,5 +1,12 @@
 # 配置数据源
 spring:
+  #thymeleaf的配置
+  thymeleaf:
+    cache: false
+    enabled: true
+  #      web-stat-filter:
+  #        enabled: true
+  #        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
   devtools:
     restart:
       # 开启自动重启
@@ -22,6 +29,7 @@ spring:
     username: root
     password: 200202
 
+
 # MyBatis配置
 mybatis:
   # mybatis配置文件的路径
@@ -41,10 +49,3 @@ mybatis:
     aggressive-lazy-loading: false
     # 驼峰命名
     map-underscore-to-camel-case: true
-  #thymeleaf的配置
-  thymeleaf:
-    cache: false
-    enabled: true
-#      web-stat-filter:
-#        enabled: true
-#        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"

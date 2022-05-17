@@ -14,4 +14,5 @@ public class ResultVO {
     private String msg;
     private Boolean success;
     private Object data;
+    private Integer count;
 }

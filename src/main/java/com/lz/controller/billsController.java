@@ -12,21 +12,27 @@ import java.util.Date;
 
 @Controller
 @RequestMapping("bills")
-@ResponseBody
 public class billsController {
     @Autowired
     private billsService billsService;
 
     @GetMapping("loadAllBills")
-    public ResultVO loadAllBills(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer limit, Integer  typeid, Date startDate, Date endDate) {
+    @ResponseBody
+    public ResultVO loadAllBills(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer limit, Integer  typeid, String startDate, String endDate) {
 
 
         return billsService.get(page,limit,typeid,startDate,endDate);
     }
-    @PostMapping("addBills")
+    @RequestMapping("addBills")
+    @ResponseBody
     public ResultVO addBills(Bills bills,@RequestParam String remark) {
         System.out.println(bills.getBilltime());
         bills.setRemark(remark);
         return billsService.add(bills);
+    }
+
+    @RequestMapping("toBillsList")
+    public String toBillsList(){
+        return "list";
     }
 }
